@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Delta Stump</title>
+    <meta name="description"
+        content="Get a free estimate. Serving Oxford, MS and surrounding areas. Call or use our simple form." />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%232d5a3d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z'/%3E%3Cpath d='M12 22v-3'/%3E%3C/svg%3E" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon"><img src="images/logo.svg" alt="" width="36" height="36" /></div>
+                <div class="logo-text">Delta <span>Stump</span></div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="services.html">Services</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary nav-cta">Get an Estimate</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="section-label">Reach us</div>
+            <h1>Get in touch</h1>
+            <p>Phone is fastest. Form works too. We'll get back to you same day.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-layout">
+
+                <div class="contact-info">
+                    <h2>Let's talk</h2>
+                    <p>Easiest way to reach us is by phone. If we don't pick up, we're probably on a job. Leave a
+                        message and we'll call you back the same day — usually within a couple hours.</p>
+
+                    <div class="contact-aside">
+                        We're usually out in the field Mon–Sat. Best time to call is between 7am and 6pm. After hours,
+                        leave a voicemail and we'll get back to you first thing.
+                    </div>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i data-lucide="phone" class="contact-icon"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <a href="tel:6625550182">(662) 555-0182</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="mail" class="contact-icon"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:info@deltastump.com">info@deltastump.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="map-pin" class="contact-icon"></i>
+                            <div>
+                                <strong>Service Area</strong>
+                                <span>Oxford, MS &amp; surrounding areas</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i data-lucide="clock" class="contact-icon"></i>
+                            <div>
+                                <strong>Hours</strong>
+                                <span>Mon–Sat, 7am to 6pm</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrap">
+                    <div id="estimateFormContent">
+                        <h2>Get a Free Estimate</h2>
+                        <p class="form-sub">Three fields. We’ll call you back same day.</p>
+
+                        <form id="estimateForm" novalidate class="intake-form intake-form--simple">
+                            <div class="form-group">
+                                <label for="firstName">Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Your name" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(662) 555-0000" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="message">What do you need?</label>
+                                <textarea id="message" name="message" placeholder="Address, # of stumps or type of job — we’ll take it from there." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary form-submit" id="submitBtn">Send</button>
+                        </form>
+                    </div>
+
+                    <div class="form-success" id="formSuccess">
+                        <div class="check"><i data-lucide="check-circle"></i></div>
+                        <h3>Got it.</h3>
+                        <p>We'll reach out within a few hours. If it's after hours or a weekend, we'll call you first
+                            thing Monday morning.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="nav-logo">
+                        <div class="logo-icon"><img src="images/logo.svg" alt="" width="36" height="36" /></div>
+                        <div class="logo-text">Delta <span>Stump</span></div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="services.html">Services</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-contact-info">
+                    <a href="tel:6625550182">(662) 555-0182</a>
+                    <a href="mailto:info@deltastump.com">info@deltastump.com</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Delta Stump LLC. Oxford, Mississippi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
