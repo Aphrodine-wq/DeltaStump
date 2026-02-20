@@ -347,15 +347,18 @@
                 <h2 id="estimateModalTitle">Get a Free Estimate</h2>
                 <p id="estimateModalDescription" class="form-sub" style="margin-bottom: 12px;">Could you share a few details about your project?</p>
                 <div id="modalFormStatus" class="form-status" aria-live="polite"></div>
-                <p style="font-size: 0.9rem; color: #c0392b; margin-bottom: 24px; font-weight: 600; padding: 12px; background: rgba(192, 57, 43, 0.05); border-radius: 6px;">Note: We focus entirely on stump grinding and surface roots. We do not offer land clearing services.</p>
                 <form id="modalEstimateForm" novalidate class="intake-form intake-form--simple modal-form" data-submit-endpoint="${defaultSubmitEndpoint}">
                     <div class="form-group">
                         <label for="modalName">Your Name</label>
                         <input type="text" id="modalName" name="name" placeholder="First Name" required />
                     </div>
                     <div class="form-group">
-                        <label for="modalPhone">Phone Number</label>
-                        <input type="tel" id="modalPhone" name="phone" placeholder="(662) 555-0000" required />
+                        <label for="modalPhone">Phone Number (Optional)</label>
+                        <input type="tel" id="modalPhone" name="phone" placeholder="(662) 555-0000" />
+                    </div>
+                    <div class="form-group">
+                        <label for="modalEmail">Email Address</label>
+                        <input type="email" id="modalEmail" name="email" placeholder="you@email.com" required />
                     </div>
                     <div class="form-group">
                         <label for="modalLocation">Address or City</label>
@@ -464,7 +467,7 @@
             setStatus(modalFormStatus, '', false);
 
             let isValid = true;
-            const required = ['modalName', 'modalPhone', 'modalLocation', 'modalStumpCount', 'modalStumps'];
+            const required = ['modalName', 'modalEmail', 'modalLocation', 'modalStumpCount', 'modalStumps'];
             const formData = {};
 
             required.forEach(id => {
@@ -479,6 +482,20 @@
                 }
             });
 
+            const phoneEl = document.getElementById('modalPhone');
+            if (phoneEl) {
+                const phoneVal = phoneEl.value.trim();
+                if (phoneVal) {
+                    if (!/^[\d\s\-\(\)\+]{7,}$/.test(phoneVal)) {
+                        showError(phoneEl, 'Enter a valid phone number.');
+                        isValid = false;
+                    }
+                    formData['modalPhone'] = phoneVal;
+                } else {
+                    formData['modalPhone'] = 'Not provided';
+                }
+            }
+
             if (!isValid) return;
 
             const submitBtn = document.getElementById('modalSubmitBtn');
@@ -489,13 +506,14 @@
             const endpoint = modalEstimateForm.dataset.submitEndpoint || defaultSubmitEndpoint;
             const subject = `New Estimate Request from ${formData.modalName}`;
             const body = (
-                `Name: ${formData.modalName}\nPhone: ${formData.modalPhone}\nLocation: ${formData.modalLocation}\nStumps: ${formData.modalStumpCount}\n\nDetails:\n${formData.modalStumps}`
+                `Name: ${formData.modalName}\nPhone: ${formData.modalPhone}\nEmail: ${formData.modalEmail}\nLocation: ${formData.modalLocation}\nStumps: ${formData.modalStumpCount}\n\nDetails:\n${formData.modalStumps}`
             );
 
             try {
                 await submitLead(endpoint, {
                     name: formData.modalName,
                     phone: formData.modalPhone,
+                    email: formData.modalEmail,
                     location: formData.modalLocation,
                     stumpCount: formData.modalStumpCount,
                     message: formData.modalStumps,
