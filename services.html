@@ -4,13 +4,61 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services | Delta Stump</title>
+    <title>Stump Removal, Grinding &amp; Root Removal Oxford MS | Delta Stump</title>
     <meta name="description"
-        content="Stump grinding, land clearing, and cleanup. Serving Oxford, MS and surrounding areas. Residential and commercial." />
+        content="Top-rated stump removal, stump grinding, and surface root removal in Oxford, MS and Lafayette County. Residential and commercial. Free estimates - Call (662) 555-0182." />
+    <link rel="canonical" href="https://deltastump.com/services.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://deltastump.com/services.html" />
+    <meta property="og:title" content="Stump Removal &amp; Grinding Services Oxford MS | Delta Stump" />
+    <meta property="og:description"
+        content="Top-rated stump removal, stump grinding, and surface root removal in Oxford, MS. Free estimates." />
+    <meta property="og:image" content="https://deltastump.com/images/og-image.jpg" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Delta Stump" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://deltastump.com/services.html" />
+    <meta name="twitter:title" content="Stump Removal &amp; Grinding Services Oxford MS | Delta Stump" />
+    <meta name="twitter:description"
+        content="Top-rated stump removal, stump grinding, and surface root removal in Oxford, MS. Free estimates." />
+    <meta name="twitter:image" content="https://deltastump.com/images/og-image.jpg" />
+
+    <!-- Preloads -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%232d5a3d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z'/%3E%3Cpath d='M12 22v-3'/%3E%3C/svg%3E" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <!-- Breadcrumb schema -->
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://deltastump.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Services" }
+    ]}
+    </script>
+
+    <!-- FAQ schema for rich results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "What does stump grinding cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing is based on the size (diameter) of the stump. Single stumps typically run $75–$200. Multiple stumps get a better rate. We give you a firm number before we start." } },
+        { "@type": "Question", "name": "How deep do you grind stumps?", "acceptedAnswer": { "@type": "Answer", "text": "6 to 8 inches below grade by default. If you're planting grass or laying sod on top, that's plenty. Need it deeper? Just ask." } },
+        { "@type": "Question", "name": "How do you price surface root removal?", "acceptedAnswer": { "@type": "Answer", "text": "Surface root jobs are priced based on the overall length and density of the exposed roots. We give you a flat bid — not an hourly estimate." } },
+        { "@type": "Question", "name": "Is cleanup included?", "acceptedAnswer": { "@type": "Answer", "text": "Spreading the chips in place is included. Hauling them off the property is an add-on — let us know when you call so we can factor it into the estimate." } }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -26,7 +74,8 @@
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="contact.html" class="btn btn-primary nav-cta">Get an Estimate</a></li>
+                <li><a href="contact.html" class="btn btn-primary nav-cta js-open-estimate-modal"
+                        data-modal-trigger="estimate">Get Your Free Estimate Today</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -37,8 +86,9 @@
     <section class="page-header">
         <div class="container">
             <div class="section-label">What we do</div>
-            <h1>Services</h1>
-            <p>Nothing fancy. Just the work, done right.</p>
+            <h1>Stump removal &amp; grinding services</h1>
+            <p>Stump grinding, tree stump removal, and surface root removal in Oxford, MS. Nothing fancy. Just the work,
+                done right and guaranteed.</p>
         </div>
     </section>
 
@@ -57,7 +107,8 @@
                     <p>Takes about 30 minutes for a normal-sized stump. Big ones take longer — we've handled oak stumps
                         over 4 feet across without any issues. Residential, commercial, farm, doesn't matter.</p>
                     <p>We charge by the stump size. Got a bunch of them? We'll work out a rate for the whole job.</p>
-                    <a href="contact.html" class="btn btn-primary">Get a price</a>
+                    <a href="contact.html" class="btn btn-primary js-open-estimate-modal"
+                        data-modal-trigger="estimate">Get Your Free Estimate Today</a>
 
                     <div class="service-qa">
                         <div class="service-qa-item">
@@ -81,29 +132,30 @@
         <div class="container">
             <div class="service-detail-layout reverse">
                 <div class="service-detail-img">
-                    <img src="images/service-clearing.png" alt="A cleared lot with stumps removed" loading="lazy" />
+                    <img src="images/service-clearing.png" alt="Exposed surface roots on a lawn" loading="lazy" />
                 </div>
                 <div class="service-detail-text">
-                    <h2>Land Clearing</h2>
-                    <p>If you're prepping a lot for construction, putting in a driveway, or trying to clean up a piece
-                        of property that's gotten out of hand — we can clear out all the stumps and surface roots.</p>
-                    <p>We've done jobs from a quarter acre up to about 10 acres. The equipment we use can get into tight
-                        spots and handle most terrain. Usually in and out faster than people expect.</p>
-                    <p>Call us with the address and the rough size of the area. We'll come look at it for free and tell
-                        you what it'll cost.</p>
-                    <a href="contact.html" class="btn btn-primary">Get a price</a>
+                    <h2>Surface Root Removal</h2>
+                    <p>Got large surface roots popping up across your yard making it hard to mow or turning into a
+                        tripping hazard? We trace the roots from the old stump and grind them down below the grade.</p>
+                    <p>Often, older trees will spread roots far into the lawn. Rather than bringing in a backhoe and
+                        tearing up the turf, our specialized grinder walks over the lawn and mills the root directly
+                        into mulch.</p>
+                    <p>Call us with the rough length of the exposed roots you need removed. We'll come look at it for
+                        free and tell you what it'll cost.</p>
+                    <a href="contact.html" class="btn btn-primary js-open-estimate-modal"
+                        data-modal-trigger="estimate">Get Your Free Estimate Today</a>
 
                     <div class="service-qa">
                         <div class="service-qa-item">
-                            <strong>How do you price bigger jobs?</strong>
-                            <p>For land clearing jobs, we come out and look at the property first. Pricing depends on
-                                stump count, size, soil conditions, and access. We'll give you a flat bid — not an
-                                hourly estimate.</p>
+                            <strong>How do you price root removal?</strong>
+                            <p>Surface root jobs are priced based on the overall length and density of the exposed
+                                roots. We'll give you a flat bid — not an hourly estimate.</p>
                         </div>
                         <div class="service-qa-item">
-                            <strong>How long does it take?</strong>
-                            <p>A quarter-acre lot usually takes one full day. Larger properties may take two. We'll give
-                                you a realistic timeframe when we come out to look.</p>
+                            <strong>Will it harm the rest of my yard?</strong>
+                            <p>Because the grinder only targets the specific root veins, the disruption to the
+                                surrounding grass is extremely minimal.</p>
                         </div>
                     </div>
                 </div>
@@ -124,7 +176,8 @@
                         which.</p>
                     <p>If there are surface roots sticking up near where the stump was, we can grind those down too. The
                         goal is for your yard to look like there was never a tree there.</p>
-                    <a href="contact.html" class="btn btn-primary">Get a price</a>
+                    <a href="contact.html" class="btn btn-primary js-open-estimate-modal"
+                        data-modal-trigger="estimate">Get Your Free Estimate Today</a>
 
                     <div class="service-qa">
                         <div class="service-qa-item">
@@ -151,6 +204,7 @@
                         <div class="logo-icon"><img src="images/logo.svg" alt="" width="36" height="36" /></div>
                         <div class="logo-text">Delta <span>Stump</span></div>
                     </div>
+                    <p class="footer-tagline">Stump removal &amp; stump grinding in Oxford, MS. Free estimates.</p>
                 </div>
                 <div class="footer-links">
                     <a href="services.html">Services</a>
@@ -163,13 +217,27 @@
                     <a href="mailto:info@deltastump.com">info@deltastump.com</a>
                 </div>
             </div>
+            <div class="footer-service-area">
+                <strong>Service area:</strong> Stump removal and tree stump grinding in Oxford, University, Taylor,
+                Lafayette County, and surrounding North Mississippi.
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Delta Stump LLC. Oxford, Mississippi.</p>
+                <p>&copy; 2026 Delta Stump LLC. Oxford, Mississippi.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating Call Action -->
+    <a href="tel:6625550182" class="floating-cta" aria-label="Call Delta Stump">
+        <i data-lucide="phone"></i>
+    </a>
+
     <script src="script.js"></script>
+    <!-- Framer Motion Vanilla JS -->
+    <script type="module">
+        import { animate, scroll, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
+        window.framerMotion = { animate, scroll, inView, stagger };
+    </script>
 </body>
 
 </html>

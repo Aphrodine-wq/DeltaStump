@@ -4,9 +4,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Transparent Pricing | Delta Stump</title>
+    <title>Stump Removal &amp; Grinding Pricing Oxford MS | Delta Stump</title>
     <meta name="description"
-        content="Clear pricing for stump grinding, land clearing, and cleanup. Oxford, MS and surrounding areas. Free estimates." />
+        content="Transparent pricing for stump removal and stump grinding in Oxford, MS. Typical job $200–$600. Surface root removal and cleanup. Free estimates." />
+    <link rel="canonical" href="https://deltastump.com/pricing.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://deltastump.com/pricing.html" />
+    <meta property="og:title" content="Stump Removal &amp; Grinding Pricing Oxford MS | Delta Stump" />
+    <meta property="og:description"
+        content="Clear pricing for stump removal and stump grinding in Oxford, MS. Free estimates." />
+    <meta property="og:image" content="https://deltastump.com/images/og-image.jpg" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Delta Stump" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://deltastump.com/pricing.html" />
+    <meta name="twitter:title" content="Stump Removal &amp; Grinding Pricing Oxford MS | Delta Stump" />
+    <meta name="twitter:description"
+        content="Clear pricing for stump removal in Oxford, MS. Free estimates." />
+    <meta name="twitter:image" content="https://deltastump.com/images/og-image.jpg" />
+
+    <!-- Breadcrumb schema -->
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://deltastump.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Pricing" }
+    ]}
+    </script>
+
+    <!-- Preloads -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%232d5a3d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z'/%3E%3Cpath d='M12 22v-3'/%3E%3C/svg%3E" />
@@ -26,7 +60,7 @@
                 <li><a href="pricing.html" class="active">Pricing</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="contact.html" class="btn btn-primary nav-cta">Get an Estimate</a></li>
+                <li><a href="contact.html" class="btn btn-primary nav-cta js-open-estimate-modal" data-modal-trigger="estimate">Get an Estimate</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -46,16 +80,23 @@
         <div class="container">
             <div class="about-text">
                 <h2>Stump Grinding</h2>
-                <p>Pricing is based on the size (diameter) of the stump. Single stumps typically run <strong>$75–$200</strong>. Multiple stumps get a better rate. A typical job runs <strong>$200–$600</strong>. We give you a flat price before we start — no hourly guesswork.</p>
-                <a href="contact.html" class="btn btn-primary">Get your estimate</a>
+                <p>Pricing is based on the size (diameter) of the stump. Single stumps typically run
+                    <strong>$75–$200</strong>. Multiple stumps get a better rate. A typical job runs
+                    <strong>$200–$600</strong>. We give you a flat price before we start — no hourly guesswork.
+                </p>
+                <a href="contact.html" class="btn btn-primary js-open-estimate-modal" data-modal-trigger="estimate">Get your estimate</a>
 
-                <h2>Land Clearing</h2>
-                <p>For land clearing we come out and look at the property first. Pricing depends on stump count, size, soil conditions, and access. We give you a <strong>flat bid</strong> — not an hourly estimate. Call with the address and rough size; we'll tell you what it'll cost.</p>
-                <a href="contact.html" class="btn btn-primary">Get your estimate</a>
+                <h2>Surface Root Removal</h2>
+                <p>For surface roots trailing across the yard, we come out and look at the property first. Pricing
+                    depends on the overall length of the roots, density, and access. We give you a <strong>flat
+                        bid</strong> — not an hourly estimate. Call
+                    with the address and rough length; we'll tell you what it'll cost.</p>
+                <a href="contact.html" class="btn btn-primary js-open-estimate-modal" data-modal-trigger="estimate">Get your estimate</a>
 
                 <h2>Cleanup</h2>
-                <p>Spreading the chips in place is <strong>included</strong>. If you want every last chip hauled off the property, that's an add-on — we'll factor it into your estimate when you call.</p>
-                <a href="contact.html" class="btn btn-primary">Get your estimate</a>
+                <p>Spreading the chips in place is <strong>included</strong>. If you want every last chip hauled off the
+                    property, that's an add-on — we'll factor it into your estimate when you call.</p>
+                <a href="contact.html" class="btn btn-primary js-open-estimate-modal" data-modal-trigger="estimate">Get your estimate</a>
 
                 <h2>Payment</h2>
                 <p>We take Venmo, Cash, and CashApp. Easy and straightforward.</p>
@@ -68,10 +109,11 @@
             <div class="cta-box">
                 <div>
                     <h2>Ready for a number?</h2>
-                    <p>Call us or fill out the form. We come out, take a look, and give you a straight price. No commitment, no pressure.</p>
+                    <p>Call us or fill out the form. We come out, take a look, and give you a straight price. No
+                        commitment, no pressure.</p>
                 </div>
                 <div class="cta-actions">
-                    <a href="contact.html" class="btn btn-primary">Get your estimate</a>
+                    <a href="contact.html" class="btn btn-primary js-open-estimate-modal" data-modal-trigger="estimate">Get your estimate</a>
                     <a href="tel:6625550182" class="cta-phone"><i data-lucide="phone"></i> (662) 555-0182</a>
                 </div>
             </div>
@@ -86,6 +128,7 @@
                         <div class="logo-icon"><img src="images/logo.svg" alt="" width="36" height="36" /></div>
                         <div class="logo-text">Delta <span>Stump</span></div>
                     </div>
+                    <p class="footer-tagline">Stump removal &amp; stump grinding in Oxford, MS. Free estimates.</p>
                 </div>
                 <div class="footer-links">
                     <a href="services.html">Services</a>
@@ -98,13 +141,26 @@
                     <a href="mailto:info@deltastump.com">info@deltastump.com</a>
                 </div>
             </div>
+            <div class="footer-service-area">
+                <strong>Service area:</strong> Stump removal and tree stump grinding in Oxford, University, Taylor, Lafayette County, and surrounding North Mississippi.
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Delta Stump LLC. Oxford, Mississippi.</p>
+                <p>&copy; 2026 Delta Stump LLC. Oxford, Mississippi.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating Call Action -->
+    <a href="tel:6625550182" class="floating-cta" aria-label="Call Delta Stump">
+        <i data-lucide="phone"></i>
+    </a>
+
     <script src="script.js"></script>
+    <!-- Framer Motion Vanilla JS -->
+    <script type="module">
+        import { animate, scroll, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
+        window.framerMotion = { animate, scroll, inView, stagger };
+    </script>
 </body>
 
 </html>

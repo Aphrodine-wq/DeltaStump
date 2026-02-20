@@ -4,9 +4,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Delta Stump</title>
+    <title>Contact | Free Stump Removal Estimate Oxford MS | Delta Stump</title>
     <meta name="description"
-        content="Get a free estimate. Serving Oxford, MS and surrounding areas. Call or use our simple form." />
+        content="Get a free estimate for stump removal and stump grinding in Oxford, MS. Call (662) 555-0182 or use our form. Same-day callbacks." />
+    <link rel="canonical" href="https://deltastump.com/contact.html" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://deltastump.com/contact.html" />
+    <meta property="og:title" content="Contact | Free Stump Removal Estimate Oxford MS | Delta Stump" />
+    <meta property="og:description"
+        content="Free estimate for stump removal and stump grinding in Oxford, MS. Call or form. Same-day callbacks." />
+    <meta property="og:image" content="https://deltastump.com/images/og-image.jpg" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Delta Stump" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://deltastump.com/contact.html" />
+    <meta name="twitter:title" content="Contact | Free Stump Removal Estimate Oxford MS | Delta Stump" />
+    <meta name="twitter:description"
+        content="Free estimate for stump removal in Oxford, MS. Call or form." />
+    <meta name="twitter:image" content="https://deltastump.com/images/og-image.jpg" />
+
+    <!-- Breadcrumb schema -->
+    <script type="application/ld+json">
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://deltastump.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact" }
+    ]}
+    </script>
+
+    <!-- Preloads -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24' fill='none' stroke='%232d5a3d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z'/%3E%3Cpath d='M12 22v-3'/%3E%3C/svg%3E" />
@@ -26,7 +60,7 @@
                 <li><a href="pricing.html">Pricing</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
-                <li><a href="contact.html" class="btn btn-primary nav-cta">Get an Estimate</a></li>
+                <li><a href="contact.html" class="btn btn-primary nav-cta js-open-estimate-modal" data-modal-trigger="estimate">Get an Estimate</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -37,8 +71,8 @@
     <section class="page-header">
         <div class="container">
             <div class="section-label">Reach us</div>
-            <h1>Get in touch</h1>
-            <p>Phone is fastest. Form works too. We'll get back to you same day.</p>
+            <h1>Get a free stump removal estimate</h1>
+            <p>Phone is fastest. Form works too. We'll get back to you same day. Serving Oxford, MS and surrounding areas.</p>
         </div>
     </section>
 
@@ -75,7 +109,14 @@
                             <i data-lucide="map-pin" class="contact-icon"></i>
                             <div>
                                 <strong>Service Area</strong>
-                                <span>Oxford, MS &amp; surrounding areas</span>
+                                <span>Oxford, University, Taylor, Lafayette County, MS &amp; surrounding North Mississippi</span>
+                            </div>
+                        </div>
+                        <div class="contact-item contact-find-us">
+                            <i data-lucide="search" class="contact-icon"></i>
+                            <div>
+                                <strong>Find us online</strong>
+                                <span>Search &quot;stump removal Oxford MS&quot;, &quot;stump grinding Lafayette County&quot;, or &quot;tree stump removal Mississippi&quot; — we&apos;re here.</span>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -91,20 +132,32 @@
                 <div class="contact-form-wrap">
                     <div id="estimateFormContent">
                         <h2>Get a Free Estimate</h2>
-                        <p class="form-sub">Three fields. We’ll call you back same day.</p>
+                        <p class="form-sub">We’ll give you a call back today.</p>
+                        <p
+                            style="font-size: 0.9rem; color: #c0392b; margin-bottom: 20px; font-weight: 600; padding: 12px; background: rgba(192, 57, 43, 0.05); border-radius: 6px;">
+                            Note: We focus entirely on stump grinding and surface roots. We do not offer land clearing
+                            services.</p>
 
-                        <form id="estimateForm" novalidate class="intake-form intake-form--simple">
+                        <div id="estimateFormStatus" class="form-status" aria-live="polite"></div>
+                        <form id="estimateForm" novalidate class="intake-form intake-form--simple" data-submit-endpoint="https://formsubmit.co/ajax/info@deltastump.com">
                             <div class="form-group">
-                                <label for="firstName">Name</label>
-                                <input type="text" id="firstName" name="firstName" placeholder="Your name" required />
+                                <label for="firstName">Your Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="First name" required />
                             </div>
                             <div class="form-group">
-                                <label for="phone">Phone</label>
+                                <label for="phone">Phone Number</label>
                                 <input type="tel" id="phone" name="phone" placeholder="(662) 555-0000" required />
                             </div>
                             <div class="form-group">
-                                <label for="message">What do you need?</label>
-                                <textarea id="message" name="message" placeholder="Address, # of stumps or type of job — we’ll take it from there." required></textarea>
+                                <label for="stumpCount">Roughly how many stumps do you need removed?</label>
+                                <input type="number" id="stumpCount" name="stumpCount" placeholder="e.g. 1" min="1"
+                                    required />
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Is there anything else we should know?</label>
+                                <textarea id="message" name="message"
+                                    placeholder="Approximate size of stumps, location in yard, access issues, etc."
+                                    required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary form-submit" id="submitBtn">Send</button>
                         </form>
@@ -130,6 +183,7 @@
                         <div class="logo-icon"><img src="images/logo.svg" alt="" width="36" height="36" /></div>
                         <div class="logo-text">Delta <span>Stump</span></div>
                     </div>
+                    <p class="footer-tagline">Stump removal &amp; stump grinding in Oxford, MS. Free estimates.</p>
                 </div>
                 <div class="footer-links">
                     <a href="services.html">Services</a>
@@ -142,13 +196,26 @@
                     <a href="mailto:info@deltastump.com">info@deltastump.com</a>
                 </div>
             </div>
+            <div class="footer-service-area">
+                <strong>Service area:</strong> Stump removal and tree stump grinding in Oxford, University, Taylor, Lafayette County, and surrounding North Mississippi.
+            </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Delta Stump LLC. Oxford, Mississippi.</p>
+                <p>&copy; 2026 Delta Stump LLC. Oxford, Mississippi.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating Call Action -->
+    <a href="tel:6625550182" class="floating-cta" aria-label="Call Delta Stump">
+        <i data-lucide="phone"></i>
+    </a>
+
     <script src="script.js"></script>
+    <!-- Framer Motion Vanilla JS -->
+    <script type="module">
+        import { animate, scroll, inView, stagger } from "https://cdn.jsdelivr.net/npm/motion@11.11.13/+esm";
+        window.framerMotion = { animate, scroll, inView, stagger };
+    </script>
 </body>
 
 </html>
