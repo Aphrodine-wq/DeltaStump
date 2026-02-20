@@ -29,6 +29,7 @@
   <meta name="twitter:image" content="https://deltastump.com/images/og-image.jpg" />
 
   <!-- Performance -->
+  <link rel="preload" as="image" href="images/hero-bg.png" fetchpriority="high" />
   <link rel="preload"
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap"
     as="style">
@@ -97,6 +98,7 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="pricing.html">Pricing</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="learning.html">Learning</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="contact.html" class="btn btn-primary nav-cta js-open-estimate-modal"
             data-modal-trigger="estimate">Get an Estimate</a></li>
@@ -110,7 +112,8 @@
 
   <section class="hero" id="hero">
     <div class="hero-bg" aria-hidden="true"></div>
-    <video autoplay muted loop playsinline preload="metadata" class="hero-video" poster="images/hero-bg.png">
+    <video autoplay muted loop playsinline preload="metadata" class="hero-video" poster="images/hero-bg.png"
+      fetchpriority="high">
       <source src="Professional_video_quality_1080p_20260219083.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
@@ -358,6 +361,7 @@
           <a href="services.html">Services</a>
           <a href="pricing.html">Pricing</a>
           <a href="about.html">About</a>
+          <a href="learning.html">Learning</a>
           <a href="contact.html">Contact</a>
         </div>
         <div class="footer-contact-info">

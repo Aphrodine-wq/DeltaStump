@@ -226,7 +226,6 @@
             const required = [
                 { id: 'firstName', label: 'Name' },
                 { id: 'phone', label: 'Phone' },
-                { id: 'stumpCount', label: 'Number of stumps' },
                 { id: 'message', label: 'Details' },
             ];
 
@@ -258,14 +257,12 @@
             submitBtn.disabled = true;
 
             const endpoint = estimateForm.dataset.submitEndpoint || defaultSubmitEndpoint;
-            const subject = `New Estimate Request from ${formData.firstName}`;
-            const body = `Name: ${formData.firstName}\nPhone: ${formData.phone}\nStumps: ${formData.stumpCount}\n\nDetails:\n${formData.message}`;
+            const body = `Name: ${formData.firstName}\nPhone: ${formData.phone}\n\nDetails:\n${formData.message}`;
 
             try {
                 await submitLead(endpoint, {
                     name: formData.firstName,
                     phone: formData.phone,
-                    stumpCount: formData.stumpCount,
                     message: formData.message,
                     source: 'website-contact-form',
                     _subject: subject,
@@ -365,11 +362,7 @@
                         <input type="text" id="modalLocation" name="location" placeholder="Oxford, MS" required />
                     </div>
                     <div class="form-group">
-                        <label for="modalStumpCount">Roughly how many stumps do you need removed?</label>
-                        <input type="number" id="modalStumpCount" name="stumpCount" placeholder="e.g. 1" min="1" required />
-                    </div>
-                    <div class="form-group">
-                        <label for="modalStumps">Is there anything else we should know?</label>
+                        <label for="modalStumps">Details</label>
                         <textarea id="modalStumps" name="stumps" placeholder="Approximate size of stumps, location in yard, etc." required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary form-submit" id="modalSubmitBtn">Send Request</button>
@@ -467,7 +460,7 @@
             setStatus(modalFormStatus, '', false);
 
             let isValid = true;
-            const required = ['modalName', 'modalEmail', 'modalLocation', 'modalStumpCount', 'modalStumps'];
+            const required = ['modalName', 'modalEmail', 'modalLocation', 'modalStumps'];
             const formData = {};
 
             required.forEach(id => {
@@ -506,7 +499,7 @@
             const endpoint = modalEstimateForm.dataset.submitEndpoint || defaultSubmitEndpoint;
             const subject = `New Estimate Request from ${formData.modalName}`;
             const body = (
-                `Name: ${formData.modalName}\nPhone: ${formData.modalPhone}\nEmail: ${formData.modalEmail}\nLocation: ${formData.modalLocation}\nStumps: ${formData.modalStumpCount}\n\nDetails:\n${formData.modalStumps}`
+                `Name: ${formData.modalName}\nPhone: ${formData.modalPhone}\nEmail: ${formData.modalEmail}\nLocation: ${formData.modalLocation}\n\nDetails:\n${formData.modalStumps}`
             );
 
             try {
@@ -515,7 +508,6 @@
                     phone: formData.modalPhone,
                     email: formData.modalEmail,
                     location: formData.modalLocation,
-                    stumpCount: formData.modalStumpCount,
                     message: formData.modalStumps,
                     source: 'website-modal-form',
                     _subject: subject,
