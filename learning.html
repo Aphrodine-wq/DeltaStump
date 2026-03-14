@@ -47,6 +47,22 @@
     }
     </script>
 
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How deep do you grind the stumps?", "acceptedAnswer": { "@type": "Answer", "text": "A typical residential stump grinding goes about 4 to 8 inches below the surface of the soil." }},
+        { "@type": "Question", "name": "What happens to the wood chips?", "acceptedAnswer": { "@type": "Answer", "text": "We can either use the wood chips to naturally backfill the hole, leave them as garden mulch, or haul them away entirely." }},
+        { "@type": "Question", "name": "Can a stump grinder remove large surface roots?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The grinder can chase exposed roots and grind them down flat, eliminating tripping hazards and protecting nearby concrete." }},
+        { "@type": "Question", "name": "Will a tree grow back after grinding?", "acceptedAnswer": { "@type": "Answer", "text": "For 95% of trees, grinding the stump sufficiently below grade permanently kills the remains, leaving the roots to decompose naturally." }},
+        { "@type": "Question", "name": "Are tree roots dangerous to my home's foundation?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Species like Sweetgum, Silver Maple, and large Oaks can penetrate foundation cracks, buckle concrete driveways, and crush underground plumbing." }},
+        { "@type": "Question", "name": "Will my homeowner's insurance cover professional stump removal?", "acceptedAnswer": { "@type": "Answer", "text": "Typically only if the tree was uprooted due to a covered peril and the stump poses a direct physical hazard." }}
+      ]
+    }
+    </script>
+
     <!-- Preloads for Speed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -287,70 +303,84 @@
                 <h2 style="font-size: 2rem; margin-bottom: 24px; color: var(--text-dark);">Frequently Asked Questions
                 </h2>
 
-                <div style="margin-bottom: 24px;">
-                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--green-dark); margin-bottom: 8px;">How
-                        deep do you grind the stumps?</h4>
-                    <p style="color: var(--text-mid); font-size: 1.05rem;">
-                        A typical residential stump grinding goes about 4 to 8 inches below the surface of the soil.
-                        This depth provides enough soil covering to safely plant new seed or sod without running into
-                        remaining subsurface wood.
-                    </p>
-                </div>
+                <div class="faq-list">
+                    <div class="faq-item open">
+                        <button class="faq-question" aria-expanded="true">
+                            How deep do you grind the stumps?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>A typical residential stump grinding goes about 4 to 8 inches below the surface of the soil.
+                                This depth provides enough soil covering to safely plant new seed or sod without running into
+                                remaining subsurface wood.</p>
+                        </div>
+                    </div>
 
-                <div style="margin-bottom: 24px;">
-                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--green-dark); margin-bottom: 8px;">What
-                        happens to the wood chips?</h4>
-                    <p style="color: var(--text-mid); font-size: 1.05rem;">
-                        The stump grinding process produces a substantial amount of wood chips and dirt matrix. We can
-                        either use this byproduct to naturally backfill the hole, leave it in a neat pile for you to
-                        repurpose as garden mulch, or haul it away entirely, depending on your preferences.
-                    </p>
-                </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            What happens to the wood chips?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>The stump grinding process produces a substantial amount of wood chips and dirt matrix. We can
+                                either use this byproduct to naturally backfill the hole, leave it in a neat pile for you to
+                                repurpose as garden mulch, or haul it away entirely, depending on your preferences.</p>
+                        </div>
+                    </div>
 
-                <div style="margin-bottom: 24px;">
-                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--green-dark); margin-bottom: 8px;">Can
-                        a stump grinder remove large surface roots?</h4>
-                    <p style="color: var(--text-mid); font-size: 1.05rem;">
-                        Yes. Surface roots can creep through topsoil, aggressively cracking driveways or making mowing
-                        difficult. The grinder can chase these exposed roots and grind them down flat, eliminating the
-                        tripping hazard and protecting nearby concrete.
-                    </p>
-                </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Can a stump grinder remove large surface roots?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes. Surface roots can creep through topsoil, aggressively cracking driveways or making mowing
+                                difficult. The grinder can chase these exposed roots and grind them down flat, eliminating the
+                                tripping hazard and protecting nearby concrete.</p>
+                        </div>
+                    </div>
 
-                <div style="margin-bottom: 24px;">
-                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--green-dark); margin-bottom: 8px;">Will
-                        a tree grow back after grinding?</h4>
-                    <p style="color: var(--text-mid); font-size: 1.05rem;">
-                        While extremely rare, some species of trees have very resilient root systems (like elms or
-                        poplars) that may attempt to send up new shoots. However, for 95% of trees, grinding the stump
-                        sufficiently below grade permanently kills the remains, leaving the roots to decompose naturally
-                        into the soil.
-                    </p>
-                </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Will a tree grow back after grinding?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>While extremely rare, some species of trees have very resilient root systems (like elms or
+                                poplars) that may attempt to send up new shoots. However, for 95% of trees, grinding the stump
+                                sufficiently below grade permanently kills the remains, leaving the roots to decompose naturally
+                                into the soil.</p>
+                        </div>
+                    </div>
 
-                <div style="margin-bottom: 24px;">
-                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--green-dark); margin-bottom: 8px;">Are
-                        tree roots dangerous to my home's foundation?</h4>
-                    <p style="color: var(--text-mid); font-size: 1.05rem;">
-                        Absolutely. Certain aggressive species like Sweetgum, Silver Maple, and large Oaks have root
-                        systems highly motivated to seek out moisture. If left unchecked, creeping surface roots can
-                        penetrate microscopic foundation cracks, buckle concrete driveways, and crush underground PVC
-                        plumbing lines. Expertly tracing and grinding these problem roots is a critical service we
-                        provide to protect homes across Lafayette County and Oxford.
-                    </p>
-                </div>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Are tree roots dangerous to my home's foundation?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. Certain aggressive species like Sweetgum, Silver Maple, and large Oaks have root
+                                systems highly motivated to seek out moisture. If left unchecked, creeping surface roots can
+                                penetrate microscopic foundation cracks, buckle concrete driveways, and crush underground PVC
+                                plumbing lines. Expertly tracing and grinding these problem roots is a critical service we
+                                provide to protect homes across Lafayette County and Oxford.</p>
+                        </div>
+                    </div>
 
-                <div style="margin-bottom: 24px;">
-                    <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--green-dark); margin-bottom: 8px;">Will
-                        my homeowner's insurance cover professional stump removal?</h4>
-                    <p style="color: var(--text-mid); font-size: 1.05rem;">
-                        Typically, hazard insurance policies only cover the cost of stump removal if the tree was
-                        uprooted due to a covered peril (such as an ice storm, tornado, or severe windstorm) and the
-                        remaining stump poses a direct physical hazard—such as blocking a critical driveway, crushing a
-                        covered structure, or preventing wheelchair access. We regularly collaborate with homeowners
-                        navigating disaster recovery in North Mississippi to provide highly-detailed invoicing
-                        specifically for claims adjusters.
-                    </p>
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false">
+                            Will my homeowner's insurance cover professional stump removal?
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Typically, hazard insurance policies only cover the cost of stump removal if the tree was
+                                uprooted due to a covered peril (such as an ice storm, tornado, or severe windstorm) and the
+                                remaining stump poses a direct physical hazard—such as blocking a critical driveway, crushing a
+                                covered structure, or preventing wheelchair access. We regularly collaborate with homeowners
+                                navigating disaster recovery in North Mississippi to provide highly-detailed invoicing
+                                specifically for claims adjusters.</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>

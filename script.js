@@ -297,6 +297,10 @@
         input.style.borderColor = '#c0392b';
         input.style.boxShadow = '0 0 0 3px rgba(192, 57, 43, 0.1)';
         input.setAttribute('aria-invalid', 'true');
+        if (input.parentNode) input.parentNode.classList.add('has-error');
+        setTimeout(() => {
+            if (input.parentNode) input.parentNode.classList.remove('has-error');
+        }, 500);
 
         const el = document.createElement('span');
         const errorId = `${input.id}-error`;
@@ -545,6 +549,82 @@
                 submitBtn.disabled = false;
             }
         });
+    }
+
+    // =========================================
+    // FAQ ACCORDION
+    // =========================================
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const btn = item.querySelector('.faq-question');
+        if (!btn) return;
+        btn.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+            // Close all
+            faqItems.forEach(i => {
+                i.classList.remove('open');
+                const b = i.querySelector('.faq-question');
+                if (b) b.setAttribute('aria-expanded', 'false');
+            });
+            // Toggle clicked
+            if (!isOpen) {
+                item.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // =========================================
+    // TRUST BAR COUNTER ANIMATION
+    // =========================================
+    function animateCounter(el, target, suffix) {
+        const duration = 1200;
+        const start = performance.now();
+        const startVal = 0;
+
+        function tick(now) {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            const current = Math.round(startVal + (target - startVal) * eased);
+            el.textContent = current + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+    }
+
+    const trustNums = document.querySelectorAll('.trust-item-num');
+    if (trustNums.length) {
+        const trustObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const text = el.textContent.trim();
+                    // Try to extract a number from the text
+                    const match = text.match(/^(\$?)(\d+)/);
+                    if (match) {
+                        const prefix = match[1];
+                        const num = parseInt(match[2], 10);
+                        const rest = text.slice(match[0].length);
+                        el.textContent = prefix + '0' + rest;
+                        const duration = 1200;
+                        const start = performance.now();
+                        function tick(now) {
+                            const elapsed = now - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            const current = Math.round(num * eased);
+                            el.textContent = prefix + current + rest;
+                            if (progress < 1) requestAnimationFrame(tick);
+                        }
+                        requestAnimationFrame(tick);
+                    }
+                    trustObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        trustNums.forEach(el => trustObserver.observe(el));
     }
 
 })();
