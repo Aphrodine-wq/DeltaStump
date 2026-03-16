@@ -1,0 +1,35 @@
+{
+  "project": "DeltaStump",
+  "branchName": "ralph/deploy-live",
+  "description": "Add Vercel config and deploy Delta Stump static site",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Add vercel.json for static site deployment",
+      "description": "As a developer, I want Vercel configuration so the static site deploys correctly.",
+      "acceptanceCriteria": [
+        "Create vercel.json with: { \"buildCommand\": null, \"outputDirectory\": \".\", \"framework\": null }",
+        "Verify index.html exists and loads correctly (has proper relative paths for CSS/JS)",
+        "Verify sitemap.xml and robots.txt are present",
+        "Typecheck passes"
+      ],
+      "priority": 1,
+      "passes": false,
+      "notes": "Static HTML/CSS/JS site with CDN-hosted libraries (Lucide, Framer Motion, Google Fonts). No build step needed."
+    },
+    {
+      "id": "US-002",
+      "title": "Deploy to Vercel",
+      "description": "As a client, I want my stump removal website live at a public URL.",
+      "acceptanceCriteria": [
+        "Run vercel --prod to deploy",
+        "Live URL is accessible and renders the homepage",
+        "All CDN resources load (fonts, icons, animations)",
+        "Typecheck passes"
+      ],
+      "priority": 2,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}
